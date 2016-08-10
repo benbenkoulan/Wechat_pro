@@ -1,0 +1,33 @@
+@CHARSET "UTF-8";
+*{margin: 0;padding: 0;}
+@media screen and (max-width: 330px) {
+	html,body{font-size: 13px;}
+}
+@media screen and (min-width: 340px) and (max-width:600px) {
+	html,body{font-size: 16px;}
+}
+@media screen and (min-width: 605px) {
+	html,body{font-size: 30px;}
+}
+html,body{width: 100%;font-family:'Microsoft Yahei';}
+.clearfix:after{ content: "."; display: block; height: 0; clear: both; visibility: hidden; font-size:0;}
+.header{position: fixed;top:0;width: 92%;padding: 0 4%;height:3.2rem;line-height: 2.8rem;background: #f2f2f2;font-size: 1.0rem;text-align: right;z-index: 99;}
+.header span{vertical-align: middle;}
+.header img{width: 8%;max-width: 100%;vertical-align: middle;}
+.tender_sum{margin-top:3.2rem;padding: 1.2rem 0;position: relative;}
+.tender_sum div{box-sizing:border-box;width: 50%;text-align: center;float:left;}
+.tender_left{border-right: 1px solid #f2f2f2;}
+.tender_sum div p{margin:0.3rem 0;}
+.tender_sum div p:first-child{color:#333333;font-size: 1rem;}
+.tender_info{font-size: 1.2rem;color: #000000;}
+.btn{position: fixed;left: 5%;bottom: 4px;width: 90%;padding:0.8rem 0;text-align: center;border-radius:4px;color: #ffffff;background:#cccccc;}
+.btn_active{background:#f84d4d;}
+ul{list-style: none;}
+li{display: block;}
+.tenders{margin-bottom: 60px;}
+.tenders_li{border-top: 4px solid #f1f1f1;margin-bottom: 10px;}
+.tender{padding: 0 4%;}
+.tender_title{font-size: 1.2rem;padding: 0.8rem 0;}
+.tender_li{padding: 0.6rem 0;border-top: 1px dashed #f1f1f1;color: #a0a0a0;font-size: 0.8rem;}
+.tender_li div{float: left;width: 50%;}
+.tender_li span{color: #f84d4d;}

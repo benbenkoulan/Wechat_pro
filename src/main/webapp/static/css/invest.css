@@ -1,0 +1,12 @@
+.invest_btn {
+  background: #cccccc;
+  height: 3rem;
+  line-height: 3rem;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 4px; }
+
+.invest_btn_active {
+  background: #f84d4d !important; }
+
+/*# sourceMappingURL=invest.css.map */

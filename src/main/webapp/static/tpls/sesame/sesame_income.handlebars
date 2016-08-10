@@ -1,0 +1,8 @@
+{{#with incomeTable}}
+{{#each this}}
+<tr {{#compareIndex ../../curRatePos @index}} style="color:#ff0000;" {{/compareIndex}}>
+	<td>{{ratePhase}}</td>
+	<td>{{curRate}}</td>
+</tr>
+{{/each}}
+{{/with}}

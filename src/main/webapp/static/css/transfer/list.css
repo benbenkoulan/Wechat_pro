@@ -1,0 +1,45 @@
+@CHARSET "UTF-8";
+*{margin: 0;padding: 0;}
+@media screen and (max-width: 330px) {
+	html,body{font-size: 12px;}
+}
+@media screen and (min-width: 340px) and (max-width:600px) {
+	html,body{font-size: 14px;}
+}
+@media screen and (min-width: 605px) {
+	html,body{font-size: 20px;}
+}
+html,body{width: 100%;font-family:'Microsoft Yahei';color: #6e6e6e;}
+.left{float: left;}
+.right{float: right;}
+.clearfix:after{ content: "."; display: block; height: 0; clear: both; visibility: hidden; font-size:0;}
+.none{display: none;}
+.wrapper{position: absolute; z-index: 1; top: 0;bottom: 0; left: 0; width: 100%;background: #ffffff;}
+.loading{background: url(/wechat/static/img/loading.gif) 50% 50% no-repeat;}
+.pulldown{text-align:center;width: 100%;height: 30px;font-size: .7rem;line-height: 30px;}
+.transfer_sesame{padding: 0.6rem 1.6rem;border-bottom: 4px solid #f2f2f2;}
+.invest_btn{background:#cccccc;height: 3rem;line-height: 3rem;color: #ffffff;text-align: center;border-radius: 4px;margin: 0.2rem 0 0.4rem;}
+.invest_btn_active{background:#f84d4d!important;}
+.invest_btn_inactive{background:#d8d8d8;}
+.transfer_info{margin:0.6rem 0;}
+.transfer_title{font-weight: bold;font-size: 1.2rem;}
+.transfer_info2{text-align: center;margin: 1rem 0;}
+.transfer_info_title{margin: 0.4rem 0;font-size: 0.8rem;}
+.transfer_amount{width: 40%;}
+.transfer_amount .amount{font-size: 2rem;color: #f84d4d;}
+.transfer_rate{width: 60%;}
+.transfer_rate p span{color: #000000;font-size: 2rem;}
+.transfer_info3{font-size: 0.8rem;}
+#transfer_filter_btn{width: 4rem;height: 4rem;border-radius: 4rem;border:0.2rem solid #ffffff;position:fixed;right: 2rem;bottom: 2rem;z-index: 100;background:#f84d4d;opacity: 0.5;}
+#transfer_filter_text{position:fixed;right: 3rem;bottom: 3.6rem;z-index: 111;color: #ffffff;font-size: 1.2rem;}
+#transfer_filter_layer{position: fixed;top:0;left: 0;width: 100%;height: 100%;background: #000000;opacity: 0.6;z-index: 200;}
+#transfer_filter_box{position: fixed;top: 6rem;left: 5%;border-radius: 4px; width: 78%;padding: 6%; background: #ededed; z-index: 222;}
+#transfer_filter_box p{font-size: 1.2rem;}
+.transfer_conditions{width: 100%;margin:1rem 0;}
+.transfer_condition{padding:0.6rem 0;background: #ffffff;border-right: 1px solid #fcfcfc;margin-bottom: 0.4rem;margin-right: 2%;width: 30%;text-align: center;}
+.transfer_condition_active1{background: #f84d4d;color: #ffffff;}
+.transfer_condition_active2{background: #f84d4d;color: #ffffff;}
+.filter_btns{margin-top: 1.6rem;}
+.filter_btn{width: 38%;margin:0 6%;padding: 0.6rem 0;text-align: center;border-radius: 4px;box-sizing: border-box;}
+.filter_cancel{border:#f84d4d 1px solid;color: #f84d4d;}
+.filter_ok{background: #f84d4d;color: #ffffff;}

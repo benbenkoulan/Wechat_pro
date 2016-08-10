@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+@media screen and (max-width: 330px) {
+  html, body {
+    font-size: 12px; } }
+@media screen and (min-width: 340px) and (max-width: 600px) {
+  html, body {
+    font-size: 14px; } }
+@media screen and (min-width: 605px) {
+  html, body {
+    font-size: 20px; } }
+html {
+  width: 100%;
+  font-family: 'Microsoft Yahei';
+  color: #6e6e6e;
+  user-select: none;
+  -webkit-user-select: none; }
+
+body {
+  -webkit-overflow-scrolling: "touch"; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  font-size: 0; }
+
+.none {
+  display: none; }
+
+.content {
+  padding: 1.2rem 1.6rem;
+  border-bottom: 0.3rem solid #e6e6e6; }
+
+.product_header {
+  font-size: 0.8rem; }
+
+.main_title {
+  font-size: 0.6rem;
+  text-align: center; }
+
+.left1 {
+  width: 50%;
+  text-align: center; }
+
+.right1 {
+  width: 50%;
+  text-align: center; }
+
+.left2 {
+  width: 70%; }
+
+.right2 {
+  width: 30%;
+  text-align: center; }
+
+.right3 {
+  width: 30%;
+  text-align: left; }
+
+.main {
+  margin: 1.2rem; }
+
+.main_content {
+  position: relative;
+  margin-top: 0.8rem; }
+
+.rate {
+  font-size: 1.6rem;
+  color: #f84d4d; }
+
+.sup {
+  position: absolute;
+  font-size: 0.6rem;
+  min-width: 5rem;
+  line-height: 0;
+  text-align: left;
+  color: #f84d4d; }
+
+.sup img {
+  width: 1.2rem; }
+
+.main_content:last-of-type {
+  line-height: 200%; }
+
+.content_footer > p {
+  font-size: 0.8rem;
+  width: 50%;
+  text-align: center;
+  box-sizing: border-box; }
+
+.right_border {
+  border-right: 1px solid #cccccc; }
+
+/*# sourceMappingURL=index.css.map */

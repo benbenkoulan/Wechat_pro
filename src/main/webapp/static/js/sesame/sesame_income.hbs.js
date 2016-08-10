@@ -1,0 +1,7 @@
+Handlebars.registerHelper('compareIndex',function(pos,index,option){
+	if(pos == (index + 1)){
+		return option.fn(this);
+	};
+	return option.inverse(this);
+});/*! liben 2016-07-01 */
+this.eloancnTemplate=this.eloancnTemplate||{},this.eloancnTemplate["static/tpls/sesame/sesame_income.handlebars"]=Handlebars.template({1:function(a,b,c,d,e,f,g){var h;return null!=(h=c.each.call(null!=b?b:{},b,{name:"each",hash:{},fn:a.program(2,e,0,f,g),inverse:a.noop,data:e}))?h:""},2:function(a,b,c,d,e,f,g){var h,i,j=null!=b?b:{},k=c.helperMissing,l="function",m=a.escapeExpression;return"<tr "+(null!=(h=(c.compareIndex||b&&b.compareIndex||k).call(j,null!=g[2]?g[2].curRatePos:g[2],e&&e.index,{name:"compareIndex",hash:{},fn:a.program(3,e,0,f,g),inverse:a.noop,data:e}))?h:"")+">\r\n\t<td>"+m((i=null!=(i=c.ratePhase||(null!=b?b.ratePhase:b))?i:k,typeof i===l?i.call(j,{name:"ratePhase",hash:{},data:e}):i))+"</td>\r\n\t<td>"+m((i=null!=(i=c.curRate||(null!=b?b.curRate:b))?i:k,typeof i===l?i.call(j,{name:"curRate",hash:{},data:e}):i))+"</td>\r\n</tr>\r\n"},3:function(a,b,c,d,e){return' style="color:#ff0000;" '},compiler:[7,">= 4.0.0"],main:function(a,b,c,d,e,f,g){var h;return null!=(h=c["with"].call(null!=b?b:{},null!=b?b.incomeTable:b,{name:"with",hash:{},fn:a.program(1,e,0,f,g),inverse:a.noop,data:e}))?h:""},useData:!0,useDepths:!0});

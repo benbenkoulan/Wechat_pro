@@ -1,0 +1,37 @@
+{{#with this}}
+{{#with products}}
+{{#each this}}
+<a data-vip="{{../../vip.strRatio}}" class="index_main_item" href="{{detail_href}}" {{#compareProductType type}}{{else}}style="border:none;"{{/compareProductType}}>
+	<div class="item_title clearfix">
+		<p style="float:left;width:60%;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;">{{#if icon}}<img src="{{icon}}" style="width:1.1rem;vertical-align:sub;">{{/if}}{{#compareProductType type}}{{productname}}{{period}}{{else}}{{period}}{{/compareProductType}}</p>
+		<p style="float:right;" class="enddate" data-lasttime="{{lasttime}}"></p>
+	</div>
+	<table class="item_table">
+		<tr class="td1"><td width="50%">预期年化收益</td><td width="50%">{{#compareProductType type}}合约期限{{else}}封闭期{{/compareProductType}}</td></tr>
+		<tr class="td2">
+			<td>
+				{{#compareProductType type}}
+				<div class="num">{{interest}}<i>%</i><span class="sup" style="text-align: left;">{{#if ewai}}+{{ewai}}{{/if}}{{#checkVip type ../../vip.strRatio}}+{{../../vip.strRatio}}<img src="/wechat/static/img/v2/vip_03.png" width="18">{{/checkVip}}</span></div>
+				{{else}}
+				<div class="num">{{minRate}}<i>%</i>~{{maxRate}}<i>%</i></div>
+				{{/compareProductType}}
+			</td>
+			{{#compareProductType type}}
+			<td style="text-align: center;">{{term}}</td>
+			{{else}}
+			<td style="text-align: center;">{{closedPeriod}}天</td>
+			{{/compareProductType}}
+		</tr>
+		<tr class="td3">
+			{{#compareProductType type}}
+			<td>已投人数<span>{{number}}</span>人</td>
+			{{else}}
+			<td>最长持有时间<span>{{investPeriod}}</span>天</td>
+			{{/compareProductType}}
+			<td style="border-left:1px solid #afa7a5;">募集金额<span>{{raised}}/{{sum}}万</span></td>
+		</tr>
+	</table>
+</a>
+{{/each}}
+{{/with}}
+{{/with}}

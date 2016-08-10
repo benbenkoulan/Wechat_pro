@@ -1,0 +1,29 @@
+{{#each this}}
+<div class="wmps" data-detailurl="{{detail_url}}" data-investurl="{{invest_url}}">
+	<div class="content clearfix">
+		<p class="left title">{{#if icon}}<img src="{{icon}}">{{/if}}翼农计划{{period}}</p>
+		<p class="right enddate" data-lasttime="{{compareStatus status lasttime}}"></p>
+	</div>
+	<div class="content content2 clearfix">
+		<div class="left rate info">
+			<p class="content_title">预期年化收益</p>
+			<p>
+				<b>{{interest}}<span class="sup">{{#if ewai}}+{{ewai}}{{/if}} {{#if vip_rate}}+{{vip_rate}}<img src="/wechat/static/img/v2/vip_03.png">{{/if}}</span></b>%
+			</p>
+		</div>
+		<div class="left period info">
+			<p class="content_title">合约期限</p>
+			<p>{{term}}</p>
+		</div>
+		<div class="left amount info">
+			<p class="content_title">募集金额</p>
+			<p>{{raised}}/{{sum}}万</p>
+		</div>
+	</div>
+	{{#compare_btn status lasttime}}
+		<div class="invest_btn invest_btn_active">马上投资</div>
+	{{else}}
+		<div class="invest_btn">已结束</div>
+	{{/compare_btn}}
+</div>
+{{/each}}

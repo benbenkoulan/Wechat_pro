@@ -1,0 +1,17 @@
+{{#each this}}
+<a class="pdw" href="{{detailUrl}}">
+	<table class="zqlbxq">
+	<tr>
+		<td colspan="2" style="font-size:0.8rem;text-align:left;color:#333333;">{{title}}</td>
+	</tr>
+	<tr>
+		<td class="tdauto">借款人姓名：{{owner_name}}</td>
+		<td class="tdauto">身份证号：{{idcard}}</td>
+	</tr>
+	<tr style="border-bottom:none;">
+		<td class="tdauto">借款人地区：{{areaname}}</td>
+		<td class="tdauto">借款总额：{{unmatch_amount}}</td>
+	</tr>
+	</table>
+</a>
+{{/each}}

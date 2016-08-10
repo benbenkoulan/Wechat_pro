@@ -1,0 +1,32 @@
+@CHARSET "UTF-8";
+*{margin: 0;padding: 0;}
+@media screen and (max-width: 330px) {
+	html,body{font-size: 12px;}
+}
+@media screen and (min-width: 340px) and (max-width:600px) {
+	html,body{font-size: 14px;}
+}
+@media screen and (min-width: 605px) {
+	html,body{font-size: 20px;}
+}
+html{width: 100%;font-family:'Microsoft Yahei';color: #6e6e6e;}
+body{padding: 1.2rem 1.6rem;}
+.left{float: left;}
+.right{float: right;}
+.text-left{text-align:left;}
+.text-center{text-align: center;}
+.text-right{text-align: right;}
+.clearfix:after{ content: "."; display: block; height: 0; clear: both; visibility: hidden; font-size:0;}
+.none{display: none;}
+
+.tansfer_info1{float: left;width: 33.33%;}
+.rate{color: #f84d4d;font-size: 2rem;}
+.info{padding: 0.5rem 0;color: #000000;}
+.rate_tip{padding: 0.6rem 1rem;background: #f2f2f2;border-radius: 4px;margin: 1rem 0;}
+.rate_tip span{color: #f84d4d;display: inline-block;margin:0 0.4rem;}
+.link{width: 100%;text-align: right;margin: 1rem 0;}
+.link a{color: #f84d4d;text-decoration: none;}
+.tip{display: inline-block;width: 1rem;height: 1rem;border-radius: 50%;background: #f84d4d;vertical-align: middle;line-height: 1rem;margin-left:0.2rem;text-align: center;color: #ffffff;}
+input[type='password']{height: 2.8rem;width: 100%;border-radius: 4px;border-width: 1px;border-style: solid;border-color: #cccccc;text-indent: 0.6rem;}
+.transfer_btn{background:#cccccc;height: 3rem;line-height: 3rem;color: #ffffff;text-align: center;border-radius: 4px;margin: 1rem 0;}
+.transfer_btn_active{background:#f84d4d!important;}

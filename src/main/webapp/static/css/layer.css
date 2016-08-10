@@ -1,0 +1,15 @@
+/**弹窗提示**/
+.alert_layer{position: fixed;background: #000000;opacity: 0.7;left: 0;top: 0;width: 100%;height: 100%;z-index: 1000;display: none;}
+.alert_box{position: fixed;background: #ffffff;width: 82%;top: 30%;left:9%;z-index: 9999;text-align: center;border-radius: 4px;display: none;}
+.alert_box p{margin: 0;width: 80%;margin-left: 8%;}
+.alert_title{font-weight: bold;height: 36px;line-height: 36px;font-size:16px;}
+.alert_content{font-size: 13px;text-align: justify;}
+.alert_content_left{text-align: left;}
+.alert_content_center{text-align: center;}
+.alert_attention{font-size:12px;color: #ff0000;text-align:left;text-align: justify;margin-top: 8px!important;}
+.alert_btn_container{width: 100%;height: 40px;border-top: 1px solid #cccccc;line-height: 40px;font-size: 14px;margin-top: 8px;}
+.alert_btn{color: #2082ff;font-weight: 700;}
+.alert_btn1{float: left;width: 50%;box-sizing:border-box;}
+.alert_btn_ok{border-left: 1px solid #cccccc;}
+.clearfix:after{clear:both;visibility: hidden;content: '.';display: block;font-size:0;}
+/**弹窗提示**/

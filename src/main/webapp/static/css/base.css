@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+@media screen and (max-width: 330px) {
+  html, body {
+    font-size: 12px; } }
+@media screen and (min-width: 340px) and (max-width: 600px) {
+  html, body {
+    font-size: 14px; } }
+@media screen and (min-width: 605px) {
+  html, body {
+    font-size: 20px; } }
+html {
+  width: 100%;
+  font-family: 'Microsoft Yahei';
+  color: #6e6e6e;
+  user-select: none;
+  -webkit-user-select: none; }
+
+body {
+  -webkit-overflow-scrolling: "touch"; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  font-size: 0; }
+
+.none {
+  display: none; }
+
+/*# sourceMappingURL=base.css.map */

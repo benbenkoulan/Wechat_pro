@@ -1,0 +1,18 @@
+@import "../base.scss";
+@import "../invest.scss";
+@import "../iscroll.scss";
+@import "../eloancn-layer.scss";
+
+.wmps{padding: 1.2rem 1.6rem;border-bottom: 8px solid #e6e6e6;}
+.content2{margin: 0.8rem 0;}
+.title{width: 60%;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+.rate{width: 40%;}
+.content>p{height: 2rem;line-height: 2rem;}
+p>img{width: 1.1rem;vertical-align: sub;}
+.period{width: 30%;text-align: center;}
+.amount{width: 30%;text-align: right;}
+.content_title{font-size: 0.8rem;}
+.info p{min-height: 2.5rem;line-height: 2.5rem;}
+p b{position: relative;font-size: 2rem;color: $redColor;font-weight: 400;}
+.sup{position: absolute;font-size: 0.6rem;min-width: 5rem;line-height: 0;}
+.sup img{width: 1.2rem;}

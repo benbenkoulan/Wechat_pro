@@ -1,0 +1,17 @@
+{{#each this}}
+<a class="pdw" style="margin-top:0" href="{{compare id}}" data-id="{{id}}">
+	<table class="zqlbxq">
+		<tr>
+			<td colspan="2" style="font-size:1rem;color:#333333;">{{detailsTitle}}</td>
+		</tr>
+		<tr style="height:24px;">
+			<td>借款人姓名：{{realname3}}</td>
+			<td>身份证号：{{strIdcard}}</td>
+		</tr>
+		<tr style="height:24px;border-bottom:none;">
+			<td>借款人地区：{{disCityname}}</td>
+			<td>借款总额：{{amount}}</td>
+		</tr>
+	</table>
+</a>
+{{/each}}

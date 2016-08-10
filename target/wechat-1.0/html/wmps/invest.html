@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no"/>
+	<title>翼农计划投资</title>
+    <link rel="stylesheet" href="/wechat/static/css/style2.css?v=1.0" />
+    <link rel="stylesheet" href="/wechat/static/css/layer.css?v=1.0" />
+</head>
+<body>
+	<!--弹窗层---开始-->
+	<div class="alert_layer"></div>
+	<div class="alert_box alert_box_yes">
+		<p class="alert_title">提示</p>
+		<p class="alert_content alert_content_center"></p>
+		<p class="alert_attention"></p>
+		<div class="alert_btn_container">
+			<div class="alert_btn alert_btn_know">知道了</div>
+		</div>
+	</div>
+	<div class="alert_box alert_box_ok">
+		<p class="alert_title">提示</p>
+		<p class="alert_content alert_content_center"></p>
+		<p class="alert_attention"></p>
+		<div class="alert_btn_container clearfix">
+			<div class="alert_btn alert_btn1 alert_btn_cancel">取消</div>
+			<div class="alert_btn alert_btn1 alert_btn_ok">确定</div>
+		</div>
+	</div>
+	<!--弹窗层---结束-->
+	<div class="invest-tit clearfix">
+		<p id="title" style="float:left;width:60%;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;"></p>
+		<p style="float:right;" class="enddate"></p>
+	</div>
+	<div class="tot" style="border-bottom:8px solid #f6f2f2;">
+    	<div class="yield">
+        	<p style="width:38%">
+                <span class="yield-tit">预期年化收益</span>
+                <b style="position:relative" id="interest1"></b>
+                <span class="sup" style="color:#f02216;" id="add_interest"></span>
+            </p>
+            <p style="text-align:center;width:30%"><span class="yield-tit">合约期限</span><span class="sum" id="term"></span></p>
+            <p style="text-align:right;width:32%"><span class="yield-tit" style="text-align: center;">&nbsp;&nbsp;剩余可投</span><span class="sum" style="text-align: center;" id="restAmount"></span></p>
+        </div>
+     </div>  
+     <div class="balance">
+        <p class="balance-recharge"><span>账户余额：<b id="balance"></b>(元)</span><a id="czhi" href="/wechat/view/index/czhi">充值</a></p>
+        <div class="balance-number clearfix">
+        	<span id="sub">-</span>
+            <input type="tel" id="num" placeholder="请输入100的整数倍" />
+            <span id="add" class="sub_add_active">+</span>
+        </div>
+        <p class="expected"><span id="expect_interest">购买金额必须为100的整数倍</span><button class="max" id="max">最大金额</button></p>
+       	<button class="invest_btn">同意协议并马上投资</button>
+        <p class="xieyi" style="margin-top:15px;"><a id="licai_url" style="text-decoration:underline">翼龙贷在线居间服务协议</a></p>
+     </div>
+<script src="/wechat/static/js/jquery.min.js"></script>
+<script src="/wechat/static/js/jquery.request.js?v=1.0"></script>
+<script src="/wechat/static/js/eloancn.wechat.util.js?v=1.0"></script>
+<script src="/wechat/static/js/wmps/invest.js?v=1.1"></script>
+</body>
+</html>

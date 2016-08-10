@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ZCGoodsMapper">
+	
+	<resultMap type="ZCGoods" id="ZCGoods">
+		<id column="id" property="id"/>
+		<result column="name" property="name"/>
+		<result column="pic" property="pic"/>
+		<result column="info" property="info"/>
+		<result column="target" property="target"/>
+		<result column="state" property="state"/>
+	</resultMap>
+
+	<sql id = "base_column_list">
+ 	 id,name,pic,info,target,state
+  	</sql>
+	
+	<select id="getById" resultType="zCGoods" parameterType="int">
+		select * from tp30_zc_goods where id=#{id}
+	</select>
+
+	<update id="update" parameterType="zCGoods">
+		update tp30_zc_goods
+		set organizer = #{organizer},
+			cate = #{cate},
+			name = #{name},
+			pic = #{pic},
+			info = #{info},
+			detail = #{detail},
+			target = #{target},
+			hbsj = #{hbsj},
+			s_time = #{s_time},
+			e_time = #{e_time}
+			addtime = #{addtime},
+			edittime = #{edittime},
+			state = #{state},
+			success = #{success}
+		where id = #{id}
+	</update>
+	
+
+	<!--根据类型查询众筹商品uid = #{uid,jdbcType=CHAR}-->
+	<select id="getZCGoodsByType" resultType="zCGoods" parameterType="hashMap" >
+	  select * from tp30_zc_goods where 
+	  (state = 1 and success = 1 and cate=#{cate}) or (cate=#{cate} and state = 1 and s_time &lt;#{currTime} and e_time &gt;#{currTime})
+	  order by id desc
+	</select>
+
+	<select id="getQueryByGoodId" resultType="zCGoods" parameterType="int">
+		select * from tp30_zc_goods where success = 0 and id=#{goods_id}
+	</select>
+</mapper>

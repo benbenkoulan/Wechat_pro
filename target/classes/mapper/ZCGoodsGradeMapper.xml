@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ZCGradeMapper">
+	
+	<resultMap type="ZCGoodsGrade" id="ZCGoodsGrade">
+		<id column="id" property="id"/>
+		<id column="gid" property="gid"/>
+		<id column="unit_price" property="unit_price"/>
+		<id column="number" property="number"/>
+		<id column="yunfei" property="yunfei"/>
+		<id column="miaosu" property="miaosu"/>
+		<id column="state" property="state"/>
+	</resultMap>
+
+	<select id="getById" resultType="ZCGoodsGrade" parameterType="int">
+		select * from tp30_zc_good_grade where id=#{id}
+	</select>
+
+	<!--根据类型查询众筹商品uid = #{uid,jdbcType=CHAR}-->
+	<select id="getGradeByParams" resultType="ZCGoodsGrade" parameterType="hashMap" >
+		select * from tp30_zc_good_grade where 
+		state = 1
+		<if test="gid!=null &amp;&amp; gid > 0">
+			and gid=#{gid}
+		</if>
+	</select>
+
+	<select id="getZCGoodsGradeBygid" resultType="ZCGoodsGrade" parameterType="int" >
+		select * from tp30_zc_good_grade where 
+		state = 1 
+		and gid =#{gid}
+		order by unit_price desc
+	</select>
+	
+	<!--根据类型查询众筹商品uid = #{uid,jdbcType=CHAR}-->
+	<select id="getGradeListByGid" resultType="ZCGoodsGrade" parameterType="int" >
+		select * from tp30_zc_good_grade where 
+		state = 1
+		and gid =#{gid}
+	</select>
+</mapper>

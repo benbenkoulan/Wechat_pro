@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ZCOrderMapper">
+	<sql id="ZCOrderColumns">goods_id,dang_id,yunfei,number,goods_name,goods_pic,address_id,address,price,addtime,edittime,uid,out_id,name,phone,beizhu</sql>
+	
+	<resultMap type="ZCOrder" id="ZCOrder">
+		<id column="id" property="id"/>
+		<result column="name" property="name"/>
+		<result column="goods_id" property="goods_id"/>
+		<result column="dang_id" property="dang_id"/>
+		<result column="yunfei" property="yunfei"/>
+		<result column="number" property="number"/>
+		<result column="goods_name" property="goods_name"/>
+		<result column="goods_pic" property="goods_pic"/>
+		<result column="address_id" property="address_id"/>
+		<result column="price" property="price"/>
+		<result column="status" property="status"/>
+		<result column="addtime" property="addtime"/>
+		<result column="edittime" property="edittime"/>
+		<result column="uid" property="uid"/>
+		<result column="out_id" property="out_id"/>
+		<result column="name" property="name"/>
+		<result column="phone" property="phone"/>
+		<result column="beizhu" property="beizhu"/>
+	</resultMap>
+	<resultMap type="ZCOrder" id="ZCOrderSupporter">
+		<result column="name" property="name"/>
+		<result column="price" property="price"/>
+		<result column="uid" property="uid"/>
+	</resultMap>
+	<insert id="save" parameterType="ZCOrder" useGeneratedKeys="true" keyProperty="id">
+		insert into tp30_zc_order  
+		(<include refid="ZCOrderColumns" />)
+		values(#{goods_id}, #{dang_id}, #{yunfei}, #{number}, #{goods_name}, #{goods_pic}, #{address_id}, #{address}, #{price}, #{addtime}, #{edittime}, #{uid}, #{out_id}, #{name}, #{phone}, #{beizhu})
+	</insert>
+
+	<update id="update" parameterType="ZCOrder">
+		update tp30_zc_order
+		set goods_id = #{goods_id},
+			dang_id = #{dang_id},
+			yunfei = #{yunfei},
+			number = #{number},
+			goods_name = #{goods_name},
+			goods_pic = #{goods_pic},
+			address_id = #{address_id},
+			address = #{address},
+			price = #{price},
+			addtime = #{addtime},
+			edittime = #{edittime},
+			uid = #{uid},
+			out_id = #{out_id},
+			name = #{name},
+			phone = #{phone},
+			beizhu = #{beizhu},
+			status = #{status}
+			where id = #{id}
+	</update>
+
+	<select id="getById" resultType="ZCOrder" parameterType="int">
+		select * from tp30_zc_order where id=#{id}
+	</select>
+	
+	<!--根据类型查询众筹商品uid = #{uid,jdbcType=CHAR}-->
+	 <select id="getByConditionPage" resultType="ZCOrder" parameterType="ZCOrder" >
+		select * from tp30_zc_order where 
+		status != 0 and status != 4 and status != 5 
+		<if test="goods_id!=null &amp;&amp; goods_id > 0">
+			and goods_id=#{goods_id}
+		</if>
+		<if test="dang_id!=null &amp;&amp; dang_id > 0">
+			and dang_id=#{dang_id}
+		</if>
+	</select>
+
+	<!--根据类型查询众筹商品uid = #{uid,jdbcType=CHAR}-->
+	<select id="getAlerdyPay" resultType="ZCOrder" parameterType="ZCOrder" >
+			select * from tp30_zc_order where status in (1,2,3)
+			and dang_id = #{dang_id}
+	</select>
+
+	<!--根据类型查询众筹商品uid = #{uid,jdbcType=CHAR}-->
+	<select id="getMyOrderList" resultType="ZCOrder" parameterType="ZCOrder" >
+		select * from tp30_zc_order where 
+		uid = #{uid}
+		and out_id = #{out_id}
+		<choose>
+			<when test="status  &lt; 0 or status == 11">
+	
+			</when>
+			<otherwise>
+				and status =#{status}
+			</otherwise>
+		</choose>
+		order by id desc
+	</select>
+	<!--根据类型查询众筹商品uid = #{uid,jdbcType=CHAR}-->
+	 <select id="getOrderByParams" resultType="ZCOrder" parameterType="hashMap" >
+		select * from tp30_zc_order where 
+		status != 0 and status != 4 and status != 5 
+		<if test="goods_id!=null &amp;&amp; goods_id > 0">
+			and goods_id=#{goods_id}
+		</if>
+		<if test="dang_id!=null &amp;&amp; dang_id > 0">
+			and dang_id=#{dang_id}
+		</if>
+	</select>
+</mapper>

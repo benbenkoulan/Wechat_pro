@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>转让</title>
+	<link rel="stylesheet" type="text/css" href="/wechat/static/css/transfer/transfer.css?v=1.0">
+	<link rel="stylesheet" type="text/css" href="/wechat/static/css/layer.css?v=1.0">
+</head>
+<body>
+	<!--弹窗层---开始-->
+	<div class="alert_layer"></div>
+	<div class="alert_box alert_box_yes">
+		<p class="alert_title">提示</p>
+		<p class="alert_content alert_content_center"></p>
+		<p class="alert_attention"></p>
+		<div class="alert_btn_container">
+			<div class="alert_btn alert_btn_know">知道了</div>
+		</div>
+	</div>
+	<!--弹窗层---结束-->
+	<div class="clearfix">
+		<div class="tansfer_info1 text-left">
+			<p>当前实收利率</p>
+			<p><span class="rate" id="curRate"></span>%</p>
+		</div>
+		<div class="tansfer_info1 text-center">
+			<p>转让金额</p>
+			<p class="info"><span id="amount"></span>元</p>
+		</div>
+		<div class="tansfer_info1 text-right">
+			<p>转让后实收<span class="tip" id="realGetTip">i</span></p>
+			<p class="info"><span id="realGetAmount"></span>元</p>
+		</div>
+	</div>
+	<div class="rate_tip">再持有<span id="keepDays"></span>天，实收利率提升为<span id="remoteRate"></span></div>
+	<div class="link">
+		<a href="/wechat/view/index/find_pay_pwd">忘记支付密码</a>
+	</div>
+	<input type="password" name="pass" placeholder="请输入支付密码">
+	<div class="transfer_btn">转让</div>
+	<div class="link">
+		<a id="protocol">协议</a>
+	</div>
+	<script src="/wechat/static/js/zepto/zepto.min.js"></script>
+	<script src="/wechat/static/js/crypto-js.js"></script>
+	<script src="/wechat/static/js/zepto/zepto.request.js?v=1.0"></script>
+	<script src="/wechat/static/js/zepto/zepto.eloancn.util.js?v=1.0"></script>
+	<script src="/wechat/static/js/transfer/transfer.js?v=1.0"></script>
+</body>
+</html>

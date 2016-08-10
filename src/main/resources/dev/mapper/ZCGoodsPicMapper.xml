@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ZCPicMapper">
+	
+	<resultMap type="ZCGoodsPic" id="ZCGoodsPic">
+		<id column="id" property="id"/>
+		<result column="pic" property="pic"/>
+		<result column="gid" property="gid"/>
+	</resultMap>
+	
+	<select id="getById" resultType="ZCGoodsPic" parameterType="int">
+		select * from tp30_zc_good_pic where id=#{id}
+	</select>
+	<!--根据类型查询众筹商品uid = #{uid,jdbcType=CHAR}-->
+	<select id="getZCGoodsPicBygid" resultType="ZCGoodsPic" parameterType="int" >
+		select * from tp30_zc_good_pic where
+		gid=#{gid}
+	</select>
+	<select id="getPicListByGid" resultType="ZCGoodsPic" parameterType="int" >
+		select * from tp30_zc_good_pic where 
+		gid=#{gid}
+	</select>
+</mapper>

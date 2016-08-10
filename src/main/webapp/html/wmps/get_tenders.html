@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="format-detection" content="telephone=no"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<link rel="stylesheet" href="/wechat/static/css/get_tenders.css?v=1.0">
+<link rel="stylesheet" href="/wechat/static/css/layer.css?v=1.0" />
+<title>翼农计划</title>
+</head>
+<body>
+	<!--弹窗层---开始-->
+	<div class="alert_layer"></div>
+	<div class="alert_box alert_box_yes">
+		<p class="alert_title">提示</p>
+		<p class="alert_content alert_content_center"></p>
+		<p class="alert_attention"></p>
+		<div class="alert_btn_container">
+			<div class="alert_btn alert_btn_know">知道了</div>
+		</div>
+	</div>
+	<div class="alert_box alert_box_ok">
+		<p class="alert_title">提示</p>
+		<p class="alert_content alert_content_center"></p>
+		<p class="alert_attention"></p>
+		<div class="alert_btn_container clearfix">
+			<div class="alert_btn alert_btn1 alert_btn_cancel">取消</div>
+			<div class="alert_btn alert_btn1 alert_btn_ok">确定</div>
+		</div>
+	</div>
+	<!--弹窗层---结束-->
+	<div class="header"><img src="/wechat/static/img/v2/shuaxin.png" /><span>&nbsp;换一批</span></div>
+	<div class="tender_sum clearfix">
+		<div class="tender_left">
+			<p>匹配债权(个)</p>
+			<p class="tender_info" id="tender_number"></p>
+		</div>
+		<div>
+			<p>投资金额(元)</p>
+			<p class="tender_info" id="invest_amount"></p>
+		</div>
+	</div>
+	<ul class="tenders" id="tenders"></ul>
+	<div class="btn" id="btn">确认&nbsp;<span class="enddate" id="enddate">00:00</span></div>
+<script type="text/x-handlebars-template" id="tender_tpl">
+{{#each this}}
+<li class="tenders_li">
+	<ul class="tender">
+		<li class="tender_title">{{title}}</li>
+		<li class="tender_li clearfix">
+			<div>借款人姓名:{{realname}}</div>
+			<div>身份证号:{{idcard}}</div>
+		</li>
+		<li class="tender_li clearfix">
+			<div>借款人地区:{{disCityname}}</div>
+			<div>借款总额:{{amount}}</div>
+		</li>
+		<li class="tender_li clearfix">
+			<span>投资金额:{{matchMoney}}元</span>
+		</li>
+	</ul>
+</li>
+{{/each}}
+</script>
+<script src="/wechat/static/js/jquery.min.js"></script>    
+<script src="/wechat/static/js/handlebars-v3.0.1.js"></script>
+<script src="/wechat/static/js/jquery.request.js?v=1.0"></script>
+<script src="/wechat/static/js/eloancn.wechat.util.js?v=1.0"></script>
+<script src="/wechat/static/js/wmps/get_tenders.js?v=1.0"></script>
+</body>
+</html>

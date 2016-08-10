@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="翼龙贷、翼农计划、互联网金融、投资理财、P2P理财、网贷、p2p平台、普惠金融、三农贷款、农业贷款、网络理财、如何理财、理财网、怎样理财、如何投资、短期理财、个人理财">
+<meta name="description" content="翼龙贷(www.eloancn.com)-专业安全的P2P网贷平台，优质高效的互联网金融理财网。致力于为投资理财用户提供安全、便捷、高收益的p2p理财服务，同时为农业贷款、三农贷款用户提供快速借款渠道。投资理财用户可通过翼龙贷平台投资翼农计划理财产品将闲置资金出借给有贷款需求的人，从而获得稳定高收益实现财富增值。">
+<meta name="author" content="翼龙贷">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="mobileOptimized" content="width">
+<meta name="handheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>翼农计划详情</title>
+<link rel="stylesheet" href="/wechat/static/css/wmps_detail.css?v=1.1" />
+</head>
+<body>
+	<div class="wrapper" id="wrapper">
+		<div id="scroller">
+			<div class="ytop">
+				<div id="title" class="fl" style="color:#6e6e6e;width:60%;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;"></div>
+				<span class="ytime fr enddate"></span>
+				<div class="xq clear">
+					<table>
+						<tr>
+							<th width="40%">预期年化收益</th>
+							<th width="25%">合约期限</th>
+							<th width="35%" >募集余额</th>
+						</tr>
+						<tr>
+							<td id="interests"></td>
+							<td style="color:#333;" id="strPhases"></td>
+							<td style="color:#333;" id="twoAmount"></td>
+						</tr>
+					</table>
+				</div>
+				<div style="position:relative;background: 1px #cccccc;" class="clear">
+					<div class="line"></div>
+						<span class="rate disp" id="percentage">&nbsp;</span>
+					</div>
+					<p class="botp clear"><span class="fl" id="restAmount">剩余可投：</span><span class="fr" id="number">参与人数：</span></p>
+				</div>
+				<div class="clear">
+					<ul class="mbot">
+			        	<li class="tab jd" id="cp">产品详情</li>
+			            <li class="tab" id="zq">债权列表</li>
+			            <li class="tab" id="tz">投资列表</li>
+			        </ul>
+			        <div class="tab_page bottom clear" id="cpxq">
+			        	  <p>翼农计划是翼龙贷推出的定期产品，可灵活选择多种期限进行投资。</p>
+			              <ul class="lxq">
+			              	<li style="background:#f8f8f8;">投资说明</li>
+			              	<li>
+			                	<label class="fl">起投金额：</label>
+			                    <span class="fr">100元，并以整数倍递增</span>
+			                </li>
+			                <li>
+			                	<label  class="fl">投资人数：</label>
+			                    <span class="fr">不限</span>
+			                </li>
+			                <li>
+			                	<label  class="fl">付息方式：</label>
+			                    <span class="fr">每日付息，到期还本</span>
+			                </li>
+			                <li>
+			                	<label  class="fl">计息时间：</label>
+			                    <span class="fr" id="strInterdate"></span>
+			                </li>
+			                <li>
+			                	<label  class="fl">首次付息时间：</label>
+			                    <span class="fr" id="firstInterDate"></span>
+			                </li>
+			                <li>
+			                	<label  class="fl">保障方式：</label>
+			                    <span class="fr">风险准备金</span>
+			                </li>
+			                <li style="background:#f8f8f8; font-size:14px;">
+			                	<label>退出说明</label>
+			                    <span class="fr"></span>
+			                </li>
+			                <li>
+			                	<label  class="fl">退出方式：</label>
+			                    <span class="fr">期满自动退出</span>
+			                </li>
+			                <li>
+			                	<label class="fl">退出时间：</label>
+			                    <span class="fr" id="outDate"></span>
+			                </li>
+			              </ul>
+			        </div>
+					<div class="tab_page none zqwrap"  id="zqlb">
+						<div id="zqlb_content"></div>
+						<div class="pulldown loading" data-listenername="zqlb"></div>
+					</div>
+					<div class="tab_page none tzlb" id="tzlb">
+						<table class="tzlbxq" id="tzlb_content">
+			            	<tr style="border-top:1px solid #f6f2f2;">
+			                    <th width="15%">投资人</th>
+			                    <th width="25%">投资金额</th>
+			                    <th width="30%">投资方式</th>
+			                    <th width="30%">加入时间</th>
+	                    	</tr>
+			            </table>
+			        </div> 
+				</div>
+		</div>
+	</div>
+	<div id="butt_area"></div>
+<script src="/wechat/static/js/jquery.min.js"></script>    
+<script src="/wechat/static/js/handlebars.runtime-v4.0.5.js"></script>
+<script src="/wechat/static/js/iscroll.js"></script>	
+<script src="/wechat/static/js/jquery.request.js?v=1.0"></script>
+<script src="/wechat/static/js/jquery.datapage.js?v=1.0"></script>
+<script src="/wechat/static/js/eloancn.wechat.util.js?v=1.0"></script>
+<script src="/wechat/static/js/wmps/wmps_zqlb.hbs.js?v=1.1"></script>
+<script src="/wechat/static/js/wmps/wmps_tzxq.hbs.js?v=1.1"></script>
+<script src="/wechat/static/js/wmps/detail.js?v=1.1"></script> 
+</body>
+</html>

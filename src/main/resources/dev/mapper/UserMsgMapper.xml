@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="UserMsgMapper">
+	<sql id="UserMsgColumns">FROMUSERNAME,MSGTYPE,CONTENT,CREATETIME,REPLYCONTENT</sql>
+	
+	<insert id="saveUserMsg" parameterType="UserMsg">
+		insert into tp30_usermsg(<include refid="UserMsgColumns" />) 
+		values(#{FROMUSERNAME},#{MSGTYPE},#{CONTENT},#{CREATETIME},#{REPLYCONTENT})
+	</insert>
+	
+	<update id="updateReplyMsg" parameterType="UserMsg">
+		update tp30_usermsg
+		set ISREPLY = 1,
+			REPLYCONTENT = #{REPLYCONTENT},
+			REPLYTIME = #{REPLYTIME}
+		where MSGID = #{MSGID}
+	</update>
+</mapper>

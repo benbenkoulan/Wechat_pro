@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>转让详情</title>
+	<link rel="stylesheet" type="text/css" href="/wechat/static/css/transfer/detail.css?v=1.0">
+	<link rel="stylesheet" type="text/css" href="/wechat/static/css/layer.css?v=1.0">
+</head>
+<body>
+	<!--弹窗层---开始-->
+	<div class="alert_layer"></div>
+	<div class="alert_box alert_box_yes">
+		<p class="alert_title">提示</p>
+		<p class="alert_content alert_content_center"></p>
+		<p class="alert_attention"></p>
+		<div class="alert_btn_container">
+			<div class="alert_btn alert_btn_know">知道了</div>
+		</div>
+	</div>
+	<div class="alert_box alert_box_ok">
+		<p class="alert_title">提示</p>
+		<p class="alert_content alert_content_center"></p>
+		<p class="alert_attention"></p>
+		<div class="alert_btn_container clearfix">
+			<div class="alert_btn alert_btn1 alert_btn_cancel">取消</div>
+			<div class="alert_btn alert_btn1 alert_btn_ok">确定</div>
+		</div>
+	</div>
+	<!--弹窗层---结束-->
+	<div class="wrapper" id="wrapper">
+		<div id="scroller">
+			<div class="transfer_sesame">
+				<div class="transfer_info clearfix">
+					<p class="transfer_title left" id="transferTitle"></p>
+					<p class="right enddate" id="endDate"></p>
+				</div>
+				<div class="transfer_info transfer_info2 clearfix">
+					<div class="transfer_amount left">
+						<p class="transfer_info_title">转让金额(元)</p>
+						<p class="amount" id="amount"></p>
+					</div>
+					<div class="transfer_rate right">
+						<p class="transfer_info_title">预期年化收益</p>
+						<p><span id="minRate"></span>%<span>~</span><span id="maxRate"></span>%</p>
+					</div>
+				</div>
+				<div class="transfer_info transfer_info3 clearfix">
+					<p class="transfer_resttime left">剩余天数:<span id="restTime"></span>天</p>
+					<p class="transfer_closeperiod right">封闭期:<span id="closePeriod"></span>天</p>
+				</div>
+			</div>
+			<div class="transfer_detail_tabs clearfix">
+				<div class="transfer_detail_tab transfer_detail_tab1 left transfer_detail_tab_active">产品详情</div>
+				<div class="transfer_detail_tab transfer_detail_tab2 left">债权列表</div>
+			</div>
+			<div class="transfer_detail_info transfer_detail_info1">
+				<div class="transfer_product_intro">
+					芝麻开花是翼龙贷推出的新型投资产品，可自由转让，灵活性高。同时持有时间越长，实际年化收益越高。
+				</div>
+				<div class="transfer_product_intro">
+					转让产品的起步实收利率以转让者转出时的实收利率为准。购买转让标往往会获得更高的收益。
+				</div>
+				<ul class="lxq">
+					<li class="check_profit">查看收益表
+						<img src="/wechat/static/img/v2/jiant_2.png" class="jiant" id="jiant2">
+						<img src="/wechat/static/img/v2/jiant.png" class="jiant none" id="jiant">
+					</li>
+					<li class="profits none">
+						<ul id="incomeTable">
+							<li class="profits_title clearfix">
+								<div class="left">持有至</div>
+								<div class="left">实收利率</div>
+							</li>
+						</ul>
+					</li>
+					<li class="desc_title">投资说明</li>
+					<li class="clearfix">
+						<label class="left">起息时间</label>
+						<span class="right">购买后当天起息</span>
+					</li>
+					<li class="clearfix">
+						<label class="left">计息方式</label>
+						<p class="clearfix right">
+							<span id="payInMode"></span>
+							<span class="tip" id="tip">i</span>
+						</p>
+					</li>
+					<li class="clearfix">
+						<label  class="left">付息时间</label>
+						<span class="right" id="payInTime"></span>
+					</li>
+					<li class="clearfix">
+						<label class="left">到期时间</label>
+						<span class="right" id="expireTime"></span>
+					</li>
+					<li  class="clearfix desc_title">
+						<label>转让说明</label>
+						<span class="right"></span>
+					</li>
+					<li class="clearfix">
+						<label class="left">封闭期结束</label>
+						<span class="right" id="endCloseDate"></span>
+					</li>
+					<li class="clearfix">
+						<label class="left">转让规则</label>
+						<span class="right" id="transRule"></span>
+					</li>
+					<li class="clearfix">
+						<label class="left">转让额度</label>
+						<span class="right" id="transAmount"></span>
+					</li>
+					<li class="clearfix">
+						<label class="left">转让限制</label>
+						<span class="right" id="transLimit"></span>
+					</li>
+				</ul>
+			</div>
+			<div class="transfer_detail_info transfer_detail_info2 none">
+				<div class="transfer_tenders"></div>
+				<div class="pulldown loading"></div>
+			</div>
+		</div>
+	</div>
+	<div id="butt_area"></div>
+	<script src="/wechat/static/js/zepto/zepto.min.js"></script>
+	<script src="/wechat/static/js/iscroll.js"></script>
+	<script src="/wechat/static/js/handlebars.runtime-v4.0.5.js"></script>
+	<script src="/wechat/static/js/zepto/zepto.request.js?v=1.0"></script>
+	<script src="/wechat/static/js/zepto/zepto.datapage.js?v=1.0"></script>
+	<script src="/wechat/static/js/zepto/zepto.eloancn.util.js?v=1.0"></script>
+	<script src="/wechat/static/js/transfer/tender.hbs.js?v=1.0"></script>
+	<script src="/wechat/static/js/transfer/income.hbs.js?v=1.0"></script>
+	<script src="/wechat/static/js/transfer/detail.js?v=1.0"></script>
+</body>
+</html>

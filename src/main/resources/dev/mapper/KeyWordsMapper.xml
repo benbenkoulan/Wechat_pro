@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="KeyWordsMapper">
+	<select id="getUnknownKeyWords" resultType="KeyWords">
+		select ID , KEYWORD , RESPONSE , TYPE , STATUS 
+		from tp30_keywords
+		where type = 'unknown'
+		and status = 1
+	</select>
+	
+	<select id="getSubscribeKeyWords" resultType="KeyWords">
+		select ID , KEYWORD , RESPONSE , TYPE , STATUS
+		from tp30_keywords
+		where type = 'focus'
+			and status = 1
+	</select>
+	
+	<select id="getKeyWords" resultType="KeyWords" parameterType="java.lang.String">
+		select ID , KEYWORD , RESPONSE , TYPE , STATUS
+		from tp30_keywords
+		where type = 'keyword' 
+			and keyword LIKE '%${_parameter}%'
+			and status = 1
+	</select>
+</mapper>

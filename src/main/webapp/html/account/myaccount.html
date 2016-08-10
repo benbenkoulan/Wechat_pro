@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>我的账户</title>
+    <link rel="stylesheet" href="/wechat/static/css/style2.css" />
+</head>
+
+<body style="background:#f6f2f2">
+	<div id="account_page">
+		<header class="header">
+	    	<div class="head">
+	            <img style="vertical-align: middle;" id="headImage" width="44" />
+	            <span id="name" style="vertical-align: middle;color:#ffffff;font-size:1.2rem;"></span>
+	        </div>
+	        <p class="money">今日收益(元)</p>
+	        <p class="number" id="today_profit">0.0</p>
+	        <div class="zichan clearfix">
+	        	<p id="total_amount"><span>总资产(元)</span></p>
+	            <p id="available_amount"><span>可用余额(元)</span></p>
+	            <div class="divde_line"></div>
+	        </div>
+	    </header>
+	    <div class="recharge clearfix">
+	    	<a class="recharge-btn link" data-type="czhi">充值</a>
+	        <a class="cash-btn link" data-type="tixian">提现</a>
+	    </div>
+	    <ul class="list-item">
+	    	<li class="link" data-type="wmps">翼农计划</li>
+			<li class="link" data-type="sesame">芝麻开花</li>
+			<li class="link" data-type="sanbiao">散标投资</li>
+			<li class="link" data-type="deallog">交易记录</li>
+			<li class="link" data-type="myhd">我的奖励<span class="redbag_number" id="redbag_number"></span></li>
+			<li class="link" data-type="usesafe">账户安全</li>
+	    </ul>
+    </div>
+    <div class="footer clearfix">
+    	<div class="footer_item">
+    		<a style="text-decoration: none;color:#a0a0a0;" class="link" data-type="index"><img src="/wechat/static/img/v2/index_03.png" width="15%" /><br>首页</a>
+    	</div>
+    	<div class="footer_item">
+    		<img src="/wechat/static/img/v2/my_03.png" width="15%" /><br><span class="foot-active">我的</span>
+    	</div>
+    </div>    
+<script src="/wechat/static/js/jquery.min.js"></script>
+<script src="/wechat/static/js/jquery.request.js?v=1.0"></script>
+<script src="/wechat/static/js/eloancn.wechat.util.js?v=1.0"></script>
+<script src="/wechat/static/js/account/myaccount.js?v=1.0"></script>
+</body>
+</html>

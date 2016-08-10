@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>购买转让标</title>
+	<link rel="stylesheet" type="text/css" href="/wechat/static/css/transfer/invest.css?v=1.0">
+	<link rel="stylesheet" type="text/css" href="/wechat/static/css/layer.css?v=1.0">
+</head>
+<body>
+	<!--弹窗层---开始-->
+	<div class="alert_layer"></div>
+	<div class="alert_box alert_box_yes">
+		<p class="alert_title">提示</p>
+		<p class="alert_content alert_content_center"></p>
+		<p class="alert_attention"></p>
+		<div class="alert_btn_container">
+			<div class="alert_btn alert_btn_know">知道了</div>
+		</div>
+	</div>
+	<div class="alert_box alert_box_ok">
+		<p class="alert_title">提示</p>
+		<p class="alert_content alert_content_center"></p>
+		<p class="alert_attention"></p>
+		<div class="alert_btn_container clearfix">
+			<div class="alert_btn alert_btn1 alert_btn_cancel">取消</div>
+			<div class="alert_btn alert_btn1 alert_btn_ok">确定</div>
+		</div>
+	</div>
+	<!--弹窗层---结束-->
+	<div class="transfer_sesame">
+		<div class="transfer_info clearfix">
+			<p class="transfer_title left" id="transferTitle"></p>
+			<p class="right enddate" id="endDate"></p>
+		</div>
+		<div class="transfer_info transfer_info2 clearfix">	
+			<div class="transfer_amount left">
+				<p class="transfer_info_title">转让金额(元)</p>
+				<p class="amount" id="transferAmount"></p>
+			</div>
+			<div class="transfer_rate right">
+				<p class="transfer_info_title">预期年化收益</p>
+				<p><span id="minRate"></span>%<span>~</span><span id="maxRate"></span>%</p>
+			</div>
+		</div>
+		<div class="transfer_info transfer_info3 clearfix">
+			<p class="transfer_resttime left">剩余天数:<span id="surplusDays"></span>天</p>
+			<p class="transfer_closeperiod right">封闭期:<span id="closePeriod"></span>天</p>
+		</div>
+	</div>
+	<div class="transfer_finance clearfix">
+		<div class="transfer_money left">
+			<p>实付金额(元)<span class="tip" id="realPayTip">i</span></p>
+			<p class="transfer_money_value" id="realPayAmount"></p>
+		</div>
+		<div class="transfer_money left">
+			<p>账户余额(元)</p>
+			<p class="transfer_money_value" id="balance"></p>
+		</div>
+		<div class="separate"></div>
+	</div>
+	<div class="czhi_box">
+		<a href="/wechat/view/index/czhi">充值</a>
+	</div>
+	<div class="invest_btn invest_btn_active">同意协议并马上投资</div>
+	<div class="doc_box clearfix">
+		<p class="left">预期收益(不等同于实际收益):<span id="expirePayIn"></span></p>
+		<p class="right"><a id="protocol">转让协议</a></p>
+	</div>
+	<script src="/wechat/static/js/zepto/zepto.min.js"></script>
+	<script src="/wechat/static/js/zepto/zepto.request.js?v=1.0"></script>
+	<script src="/wechat/static/js/zepto/zepto.eloancn.util.js?v=1.0"></script>
+	<script src="/wechat/static/js/transfer/invest.js?v=1.0"></script>
+</body>
+</html>

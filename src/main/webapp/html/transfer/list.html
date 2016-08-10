@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<title>芝麻开花转让专区</title>
+	<link rel="stylesheet" type="text/css" href="/wechat/static/css/transfer/list.css?v=1.0">
+	<link rel="stylesheet" type="text/css" href="/wechat/static/css/layer.css?v=1.0">
+</head>
+<body>
+	<!--弹窗层---开始-->
+	<div class="alert_layer"></div>
+	<div class="alert_box alert_box_yes">
+		<p class="alert_title">提示</p>
+		<p class="alert_content alert_content_center"></p>
+		<p class="alert_attention"></p>
+		<div class="alert_btn_container">
+			<div class="alert_btn alert_btn_know">知道了</div>
+		</div>
+	</div>
+	<div class="alert_box alert_box_ok">
+		<p class="alert_title">提示</p>
+		<p class="alert_content alert_content_center"></p>
+		<p class="alert_attention"></p>
+		<div class="alert_btn_container clearfix">
+			<div class="alert_btn alert_btn1 alert_btn_cancel">取消</div>
+			<div class="alert_btn alert_btn1 alert_btn_ok">确定</div>
+		</div>
+	</div>
+	<!--弹窗层---结束-->
+	<div class="wrapper" id="wrapper">
+		<div id="scroller">
+			<div id="transfer_content"></div>
+			<div class="pulldown loading"></div>
+		</div>
+	</div>
+	<div class="transfer_filter_btn" id="transfer_filter_btn"></div>
+	<div class="transfer_filter_btn" id="transfer_filter_text"><strong>筛选</strong></div>
+	<div class="transfer_filter none" id="transfer_filter_layer"></div>
+	<div class="transfer_filter none" id="transfer_filter_box">
+		<p>剩余时间</p>
+		<div class="transfer_conditions clearfix">
+			<div class="transfer_condition transfer_condition1 transfer_condition_active1 left" data-id="0">全部</div>
+			<div class="transfer_condition transfer_condition1 left" data-id="1">1个月内</div>
+			<div class="transfer_condition transfer_condition1 left" data-id="2">1~3个月</div>
+			<div class="transfer_condition transfer_condition1 left" data-id="3">3~6个月</div>
+			<div class="transfer_condition transfer_condition1 left" data-id="4">6~12个月</div>
+		</div>
+		<p>转让金额</p>
+		<div class="transfer_conditions clearfix">
+			<div class="transfer_condition transfer_condition2 transfer_condition_active2 left" data-id="0">全部</div>
+			<div class="transfer_condition transfer_condition2 left" data-id="1">5千元以内</div>
+			<div class="transfer_condition transfer_condition2 left" data-id="2">5千~1万元</div>
+			<div class="transfer_condition transfer_condition2 left" data-id="3">1万~5万元</div>
+			<div class="transfer_condition transfer_condition2 left" data-id="4">5万元以上</div>
+		</div>
+		<div class="filter_btns clearfix">
+			<div class="filter_btn left filter_cancel">取消</div>
+			<div class="filter_btn left filter_ok">确定</div>
+		</div>
+	</div>
+	<script src="/wechat/static/js/zepto/zepto.min.js"></script>
+	<script src="/wechat/static/js/iscroll.js"></script>
+	<script src="/wechat/static/js/handlebars.runtime-v4.0.5.js"></script>
+	<script src="/wechat/static/js/zepto/zepto.request.js?v=1.0"></script>
+	<script src="/wechat/static/js/zepto/zepto.datapage.js?v=1.0"></script>
+	<script src="/wechat/static/js/zepto/zepto.eloancn.util.js?v=1.0"></script>
+	<script src="/wechat/static/js/transfer/list.hbs.js?v=1.0"></script>
+	<script src="/wechat/static/js/transfer/list.js?v=1.0"></script>
+</body>
+</html>

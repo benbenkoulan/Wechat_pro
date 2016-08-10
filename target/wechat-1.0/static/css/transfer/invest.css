@@ -1,0 +1,41 @@
+@CHARSET "UTF-8";
+*{margin: 0;padding: 0;}
+@media screen and (max-width: 330px) {
+	html,body{font-size: 12px;}
+}
+@media screen and (min-width: 340px) and (max-width:600px) {
+	html,body{font-size: 14px;}
+}
+@media screen and (min-width: 605px) {
+	html,body{font-size: 20px;}
+}
+html,body{width: 100%;font-family:'Microsoft Yahei';color: #6e6e6e;}
+.left{float: left;}
+.right{float: right;}
+.clearfix:after{ content: "."; display: block; height: 0; clear: both; visibility: hidden; font-size:0;}
+.none{display: none;}
+.transfer_sesame{padding: 0.6rem 1.6rem;border-bottom: 8px solid #f6f2f2;}
+.invest_btn{background:#cccccc;height: 3rem;line-height: 3rem;color: #ffffff;text-align: center;border-radius: 4px;margin: 0.6rem 1rem;}
+.invest_btn_active{background:#f84d4d!important;}
+.invest_btn_inactive{background:#d8d8d8;}
+.transfer_info{margin:0.6rem 0;}
+.transfer_title{font-weight: bold;font-size: 1.2rem;}
+.transfer_info2{text-align: center;margin: 1rem 0;}
+.transfer_info_title{margin: 0.4rem 0;font-size: 0.8rem;}
+.transfer_amount{width: 40%;}
+.transfer_amount .amount{font-size: 2rem;color: #f84d4d;}
+.transfer_rate{width: 60%;}
+.transfer_rate p span{color: #000000;font-size: 2rem;}
+.transfer_info3{font-size: 0.8rem;}
+
+.transfer_finance{padding: 1.2rem 0;position: relative;}
+.transfer_money{width: 50%;text-align: center;}
+.transfer_money_value{color: #000000;font-size: 1.4rem;}
+.separate{position: absolute;background:#e1e1e1;width: 1px;height: 40%;top:30%;left: 50%;}
+
+.tip{display: inline-block;width: 1rem;height: 1rem;border-radius: 50%;background: #f84d4d;vertical-align: middle;line-height: 1rem;margin-left:0.2rem;text-align: center;color: #ffffff;}
+a{color: #f84d4d;font-size: 1.2rem;}
+.czhi_box{padding: 0 1.6rem;text-align: right;}
+.czhi_box a{text-decoration: none;}
+.doc_box{padding: 0.6rem 1.6rem;text-align: right;}
+.doc_box p span{color: #f84d4d;}

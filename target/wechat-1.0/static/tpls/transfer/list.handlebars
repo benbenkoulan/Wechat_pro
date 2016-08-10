@@ -1,0 +1,23 @@
+{{#each this}}
+<div class="transfer_sesame" data-productid="{{productId}}" data-recordid="{{recordId}}" data-accid="{{accId}}" data-userid="{{userId}}">
+	<div class="transfer_info clearfix">
+		<p class="transfer_title left">{{title}}</p>
+		<p class="right enddate" data-lasttime="{{surplusSeconds}}"></p>
+	</div>
+	<div class="transfer_info transfer_info2 clearfix">
+		<div class="transfer_amount left">
+			<p class="transfer_info_title">转让金额(元)</p>
+			<p class="amount">{{amount}}</p>
+		</div>
+		<div class="transfer_rate right">
+			<p class="transfer_info_title">预期年化收益</p>
+			<p><span>{{minRate}}</span>%<span>~</span><span>{{maxRate}}</span>%</p>
+		</div>
+	</div>
+	<div class="transfer_info transfer_info3 clearfix">
+		<p class="transfer_resttime left">剩余天数:{{surplusDays}}天</p>
+		<p class="transfer_closeperiod right">封闭期:{{closePeriod}}天</p>
+	</div>
+	<div class="invest_btn {{#compareStatus status}}invest_btn_active{{/compareStatus}}" data-status="{{status}}">{{statusCN}}</div>
+</div>
+{{/each}}

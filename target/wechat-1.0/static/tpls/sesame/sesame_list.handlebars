@@ -1,0 +1,29 @@
+{{#each this}}
+<div class="ytop">
+	<a style="display:block" href="{{appendIdAndPlatform detail_url}}">
+		<div class="fl" style="font-size:1rem;color:#333333">{{title}}</div>
+		<span class="enddate ytime fr" data-lasttime="{{surplusSeconds}}"></span>
+		<div style="clear:both;"></div>
+		<div class="xq clear">
+			<table><tbody>
+				<tr>
+					<th width="28%" style="background:#f2f2f2;color:#6e6e6e;">封闭期</th>
+					<th style="color:#6e6e6e;">预期年化收益</th>
+				</tr>
+				<tr>
+					<td width="28%" style="background:#f2f2f2;color:#333333;"><span style="font-size:1.4rem;background:#f2f2f2;">{{closed_period}}</span>天</td>
+					<td style="color:#6e6e6e;"><span style="font-size:1.4rem;color:#e93a3a;">&nbsp;&nbsp;&nbsp;&nbsp;{{minRate}}</span> %<span style="font-size:1.4rem;color:#e93a3a;">&nbsp;&nbsp;~&nbsp;&nbsp;{{maxRate}}</span> %</td>
+				</tr>
+			</tbody></table>
+		</div>
+	</a>
+	<p class="botp clear"><span class="fl">最长持有天数：{{investPeriod}}天</span><span class="fr">募集余额：{{total_amount}}/{{max_amount}}万</span></p>
+	<div class="invest clear">
+		{{#compareStatus productStatus}}
+			<a class="butt clear" href="{{appendIdAndPlatform invest_url}}" style="margin:1% 0% 3%;width:100%;display:block;">马上投资</a>
+		{{else}}
+			<div class="butt2 clear" onclick="" style="margin:3% 0% 3%;width:100%;">已结束</div>
+		{{/compareStatus}}
+	</div>
+</div>
+{{/each}}

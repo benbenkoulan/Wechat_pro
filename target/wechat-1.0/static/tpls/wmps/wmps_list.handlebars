@@ -1,0 +1,19 @@
+{{#each this}}
+<a class="invest-tit" href="{{appendIdAndPlatform detail_url}}" style="display:block;">翼农计划<b>{{period}}</b><span data-lasttime="{{compareStatus status lasttime}}" class="enddate"></span></a>
+<div class="tot" style="border-bottom:8px solid #f6f2f2;">
+	<a class="yield" style="display:block;" href="{{appendIdAndPlatform detail_url}}">
+		<p style="width:36%">
+			<span class="yield-tit">预期年化收益</span>
+			<b style="position:relative">{{interest}}<span class="sup">{{#if ewai}}+{{ewai}}{{/if}}{{#if vip_rate}}+{{vip_rate}}<img src="/wechat/static/img/v2/vip_03.png" width="20" />{{/if}}</span></b>
+			<span class="pct">%</span>
+		</p>
+		<p style="text-align:center;width:28%"><span class="yield-tit">合约期限</span><span class="sum" style="padding-top:12px;">{{term}}</span></p>
+		<p style="text-align:right;width:36%"><span class="yield-tit">募集金额&nbsp;</span><span class="sum" style="padding-top:12px;">{{raised}}/{{sum}}万</span></p>
+	</a>
+	{{#compare_btn status}}
+		<a class="invest_btn invest_btn_active" href="{{appendIdAndPlatform invest_url}}" style="display:block;">马上投资</a>
+	{{else}}
+		<div class="invest_btn invest_btn_inactive">已结束</div>
+	{{/compare_btn}}
+</div>
+{{/each}}

@@ -1,0 +1,56 @@
+*{margin: 0;padding: 0;}
+html,body{font-family: '微软雅黑';background: #64be07;color:#ffffff;}
+@media screen and (max-width: 330px) {
+	html,body{font-size: 12px;}
+	#album_tab{height: 41px;line-height: 40px}
+}
+@media screen and (min-width: 340px) and (max-width:600px) {
+	html,body{font-size: 16px;}
+	#album_tab{height: 51px;line-height: 50px}
+}
+@media screen and (min-width: 605px) {
+	html,body{font-size: 30px;}
+	.rule_content{font-size: 0.8rem;}
+}
+body img{max-width: 100%;width: 100%;vertical-align: bottom;}
+/**转盘Css**/
+#rotateContainer{margin-left:4%;position: relative;background: #5caf02;}
+#rotateRule{box-sizing:border-box;position: absolute;z-index: 999;}
+#rotateRule p{text-align: center;font-size: 0.8rem;color: #ccfa9b;}
+#rotateRule p span{color: #fff100;font-weight: bold;font-size: 1.2rem;}
+.prize{border: 1px solid #5caf02;position: absolute;box-sizing:border-box;text-align: center;background: #88dd2d;border-radius:4px;}
+.active{border-color: orange;border-width: 4px;}
+.prize_name{width: 100%;height: 70%;padding:15% 0;position: absolute;left: 0;top:0;background: #000000;opacity: 0.7;font-size: 0.8rem;color: #ffffff;}
+/**轮播Css**/
+.clearfix:after{clear: both;visibility: hidden;display: block;content: '.';font-size: 0;}
+#loopContainer{margin-left:4%;height: 350px;background:#5caf02;margin-top: 10px;}
+ul{padding: 0;margin:0;list-style: none;}
+li{float: left;width: 33.33%;text-align: center;}
+
+#layer{width: 100%;height:100%;background: #000000;opacity:0.8;position: fixed;left:0;top:0;z-index: 9000;}
+.rule_content{background: #df002c;padding: 1% 8% 2% 8%;color: #ffffff;}
+.rule_content p{line-height: 140%;text-align: justify;}
+#rule_exit{position: absolute;right: 0;width: 24px;height:24px;padding: 2px;background:#df002c;top:-29px;}
+#rule_exit img{width: 24px;}
+#rotateLayer{position:absolute;left: 0;top: 0;background: #000000;opacity:0.3;z-index: 500;width: 100%;height: 100%;}
+/**倒计时***/
+#timer{font-size: 8rem;color:#ccfa9b;text-align: center;line-height:220%;}
+#qrcode_area{background: #ade7ff;text-align: center;width: 100%;}
+#qrcode_area img{width: 50%;margin: 10px 0;}
+/****奖品容器****/
+.none{display: none;}
+#prizeContainer{position: fixed;top: 10%;z-index: 9000;}
+#close{width: 10%;position: absolute;right: 5%;top: 0;}
+
+/***奖品tab****/
+#album{position: relative;height: 400px;overflow: hidden;border-radius:4px;margin-left:4%;width:92%;margin-top: 10px;background: #407B00;}
+#album_tab{position: absolute;left: 0;top: 0px;width:100%;overflow: hidden;}
+#album_tab li{float:left;width: 20%;box-sizing:border-box;border-left:1px solid #5aaa00;background: #4B9100;border-bottom:1px solid #5aaa00;color:#ccfa9b;}
+.album_tab_active{background: #407B00!important;border-bottom:1px solid #407B00!important;border-top:2px solid #FFEE00;color:#FFEE00!important;}
+.album_unit{position: absolute;background: #407B00;opacity: 0.5;color:#ffffff;top:51px;}
+.album_unit_active{opacity: 1;}
+.transition{transition:left 0.5s;-webkit-transition:left 0.5s;-moz-transition:left 0.5s;}
+.loop_title{height: 40px;line-height: 40px;color:#ccfa9b;font-weight: 600;font-size: 1.2rem;}
+.award-list li{height: 30px;line-height: 30px;font-size: 0.8rem;color:#ccfa9b;}
+.prize_loop_root{position: relative;overflow: hidden;width: 100%;height: 300px;}
+.prize_loop{position: absolute;top: 0px;width: 100%;}

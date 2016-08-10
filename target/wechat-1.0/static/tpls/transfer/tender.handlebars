@@ -1,0 +1,13 @@
+{{#each this}}
+<div class="transfer_tender" data-url="{{detailUrl}}">
+	<div class="tender_row tender_title">{{title}}</div>
+	<div class="tender_row tender_info clearfix">
+		<div class="left tender_left">借款人姓名:{{owner_name}}</div>
+		<div class="left tender_right">身份证号:{{idcard}}</div>
+	</div>
+	<div class="tender_row tender_info clearfix">
+		<div class="left tender_left">借款人地区:{{areaname}}</div>
+		<div class="left tender_right">借款总额:{{unmatch_amount}}</div>
+	</div>			
+</div>
+{{/each}}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	
+	<settings> 
+        <setting name="cacheEnabled" value="true" /><!-- 全局映射器启用缓存 -->   
+        <setting name="useGeneratedKeys" value="true" /> 
+        <setting name="defaultExecutorType" value="REUSE" /> 
+    </settings>
+
+	<typeAliases>
+		<typeAlias type="com.eloancn.wechat.model.WechatUser" alias="WechatUser"/>
+		<typeAlias type="com.eloancn.wechat.model.KeyWords" alias="KeyWords"/>
+		<typeAlias type="com.eloancn.wechat.model.UserMsg" alias="UserMsg"/>
+		<typeAlias type="com.eloancn.wechat.model.ZCGoods" alias="ZCGoods"/>
+		<typeAlias type="com.eloancn.wechat.model.ZCAddress" alias="ZCAddress"/>	
+		<package name="com.eloancn.wechat.model"/>
+	</typeAliases>
+</configuration>

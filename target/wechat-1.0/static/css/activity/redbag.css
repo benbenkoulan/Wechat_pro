@@ -1,0 +1,48 @@
+*{margin: 0;padding: 0;}
+html,body{font-family: '微软雅黑';word-spacing:8px; letter-spacing: 1px;}
+@media screen and (max-width: 330px) {
+	html,body{font-size: 12px;}
+	#redbag_area{top:6%;font-size:1rem;}
+	#redbag_img_area{top: 3%;}
+}
+@media screen and (min-width: 340px) and (max-width:600px) {
+	html,body{font-size: 16px;}
+	#redbag_area{top:10%;font-size:1.1rem;}
+	#redbag_img_area{top: 4%;}
+}
+@media screen and (max-width:600px){
+	#redbag_area{width:100%;}
+	#redbag_img_area img{width: 100%;width:80%;}
+	#prize_tip_area{top: 78%;}
+	#prize_tip_area p{height: 8%;}
+	#invest_success_area img{width: 66%;}
+	#invest_success_area a{width: 80%;height: 30px;margin-left: 10%;line-height: 30px;}
+}
+@media screen and (min-width: 605px) {
+	html,body{font-size: 18px;}
+	#redbag_area{top:4%;font-size:1.2rem;width:60%;left:20%;}
+	#redbag_img_area{top: -2%;}
+	#redbag_img_area img{width:100%;}
+	#prize_tip_area{top: 74%;}
+	#prize_tip_area p{height: 6%;}
+	#invest_success_area img{width: 50%;}
+	#invest_success_area a{width: 60%;height: 40px;margin-left: 20%;line-height: 40px;}
+}
+#redbag_area{transition:opacity 0.5s ease;-moz-transition:opacity 0.5s ease;-webkit-transition:opacity 0.5s ease;}
+img{max-width: 100%;}
+#redbag_area div{color: #fad737;width: 100%;text-align: center;}
+#layer{position: fixed;background: #000000;left: 0;top: 0;width: 100%;height: 100%;z-index: 10;opacity:0;}
+#redbag_area{position: fixed;z-index: 100;height: 100%;opacity:0;}
+#redbag_area div{position: absolute;}
+#redbag_close{width: 6%;right:10%;top:0;position: absolute;z-index: 101;}
+#redbag_title{top: 0%;font-size: 1.5em;}
+#redbag_number{top: 6%;font-size: 1em;}
+#redbag_group{top: 10%;}
+#redbag_group span{font-size: 1.5em;}
+#redbag{top: 48%;}
+#redbag span{font-size: 2em;}
+#prize_tip_area{font-size: 1em;color:#fad719;height: 100%;}
+.prize_tip_bold{font-weight: 600;}
+#invest_success_area{position: fixed;top: 10%;width: 100%;height: 100%;text-align: center;}
+#invest_success_area p{font-size: 1.2rem;}
+#invest_success_area a{display: block;border: 1px solid #ff0000;border-radius:4px;margin-top: 10px;text-decoration: none;color: #ff0000;}

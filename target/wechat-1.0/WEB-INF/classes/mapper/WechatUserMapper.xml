@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="WechatUserMapper">
+	<sql id="WechatUserColumns">NICKNAME,OPENID,SEX,CITY,COUNTRY,PROVINCE,LANGUAGE,HEADIMGURL,SUBSCRIBE_TIME,UNIONID,REMARK,GROUPID</sql>
+	<!-- 根据OpenId查询微信用户 -->
+	<select id="getWechatUserInfo" parameterType="String" resultType="WechatUser">
+		select ID,NICKNAME,OPENID,SEX,CITY,COUNTRY,PROVINCE,LANGUAGE,HEADIMGURL,SUBSCRIBE_TIME,UNIONID,REMARK,GROUPID from tp30_wxuser where openid = #{openid}
+	</select>
+	
+	<select id="getWechatUserInfoByScan" parameterType="com.eloancn.wechat.entities.ScanParam" resultType="WechatUser">
+		select ID,NICKNAME,OPENID,SEX,CITY,COUNTRY,PROVINCE,LANGUAGE,HEADIMGURL,SUBSCRIBE_TIME,UNIONID,REMARK,GROUPID,TAG
+		from tp30_wxuser 
+		where openid = #{OPENID} and tag = #{TAG}
+	</select>
+	
+	<insert id="saveWechatUser" parameterType="WechatUser">
+		insert into tp30_wxuser (<include refid="WechatUserColumns" />)
+		values(#{NICKNAME}, #{OPENID}, #{SEX}, #{CITY}, #{COUNTRY}, #{PROVINCE}, #{LANGUAGE}, #{HEADIMGURL}, #{SUBSCRIBE_TIME}, #{UNIONID}, #{REMARK}, #{GROUPID})
+	</insert>
+		
+	<insert id="saveWechatUserByScan" parameterType="WechatUser">
+		insert into tp30_wxuser (<include refid="WechatUserColumns" />,TAG)
+		values(#{NICKNAME}, #{OPENID}, #{SEX}, #{CITY}, #{COUNTRY}, #{PROVINCE}, #{LANGUAGE}, #{HEADIMGURL}, #{SUBSCRIBE_TIME}, #{UNIONID}, #{REMARK}, #{GROUPID},#{TAG})
+	</insert>
+	
+	<update id="updateWechatUser" parameterType="WechatUser">
+		update tp30_wxuser
+		set NICKNAME = #{NICKNAME},
+			SEX = #{SEX},
+			COUNTRY = #{COUNTRY},
+			PROVINCE = #{PROVINCE},
+			LANGUAGE = #{LANGUAGE},
+			HEADIMGURL = #{HEADIMGURL},
+			SUBSCRIBE_TIME = #{SUBSCRIBE_TIME},
+			UNIONID = #{UNIONID},
+			REMARK = #{REMARK},
+			GROUPID = #{GROUPID},
+			TAG = #{TAG}
+		where OPENID = #{OPENID}
+	</update>
+	
+	<update id="setUnSubscribe" parameterType="WechatUser">
+		update tp30_wxuser
+		set UNSUBSCRIBE_TIME = #{UNSUBSCRIBE_TIME},
+			SUBSCRIBE = #{SUBSCRIBE}
+		where OPENID = #{OPENID}
+	</update>
+	
+	<update id="setWechatUserLogin" parameterType="WechatUser">
+		update tp30_wxuser
+		set OUT_UID = #{OUT_UID},
+			PHONE = #{PHONE},
+			APP_SECRET = #{APP_SECRET},
+			OUT_UID = #{OUT_UID},
+			IS_BIND = #{IS_BIND},
+			IS_ADD_WXUSER = #{IS_ADD_WXUSER}
+		where ID = #{ID}
+	</update>
+	<select id="getWechatUserById" parameterType="String" resultType="WechatUser">
+		select ID,NICKNAME,OPENID,SEX,CITY,COUNTRY,PROVINCE,LANGUAGE,HEADIMGURL,SUBSCRIBE_TIME,UNIONID,REMARK,GROUPID from tp30_wxuser where ID = #{id}
+	</select>
+</mapper>

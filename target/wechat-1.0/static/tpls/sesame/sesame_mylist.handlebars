@@ -1,0 +1,36 @@
+{{#each this}}
+<a class="zqwrap" data-status="{{status}}" href="{{compareStatus status id accId}}">
+	<div class="ycb" style="margin-top:0">
+		<table class="zqlbxq">
+			<tr>
+				<td style="font-size:0.8rem;text-align:left;color:#e93a3a;">{{title}}</td>
+				<td>{{getStatus status}}{{#isCountDown status}}<span data-lasttime="{{surplusSeconds}}" class="enddate"></span>{{/isCountDown}}</td>
+			</tr>
+			<tr>
+				<td>投资金额：{{amount}}元</td>
+				{{#isSettled status}}<td>持有时间：{{hadHoldDays}}天</td>{{else}}<td>参与人数：{{total_user_number}}人</td>{{/isSettled}}
+				
+			</tr>
+			{{#isSettled status}}
+			<tr>
+				<td>实收利息：{{expirePaidInterest}}元</td>
+				<td>实收利率：{{expirePaidInRate}}%</td>
+			</tr>
+			{{else}}
+			<tr>
+				<td>当前已获利息：{{curPaidInterest}}元</td>
+				<td>到期实收利息：{{expirePaidInterest}}元</td>
+			</tr>
+			<tr>
+				<td>当前实收利率：{{curPaidInRate}}%</td>
+				<td>到期实收利率：{{expirePaidInRate}}%</td>
+			</tr>	
+			{{/isSettled}}
+			<tr style="border-bottom:none;">
+				<td>起息时间：{{paidInterestTime}}</td>
+				<td>到期时间：{{expireTime}}</td>
+			</tr>
+		</table>
+	</div>  
+</a>
+{{/each}}

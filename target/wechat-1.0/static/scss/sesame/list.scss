@@ -1,0 +1,20 @@
+@import "../base.scss";
+@import "../invest.scss";
+@import "../iscroll.scss";
+@import "../eloancn-layer.scss";
+
+p{text-align:center;}
+.sesame{padding: 1.2rem 1.6rem;border-bottom: 0.3rem solid #e6e6e6;}
+.content1>p{height: 2rem;line-height: 2rem;}
+.content2{padding-top:0.8rem;padding-bottom:0.4rem;}
+.left1{width:30%;background:#f2f2f2;}
+.title{font-size:0.8rem;padding-top:0.4rem;padding-bottom:0.6rem;}
+.info1{padding-bottom:0.4rem;}
+.info1>span{font-size:1.6rem;color:#333333;}
+.right1{width:70%;}
+.main_content{position:relative;}
+.rate{font-size:1.6rem;color:$eloancnColor;}
+.sup{position: absolute;font-size: 0.6rem;min-width: 5rem;line-height: 0;text-align:left;color:$eloancnColor;}
+.sup img{width:1.2rem;}
+.content3{margin:0.8rem 0;}
+.content3>p{font-size:0.8rem;}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="Cache-Control" content="no-cache">
+	<title>Document</title>
+	<link rel="stylesheet" href="/wechat/static/css/wmps/list.css" />
+	<style>
+		.invest_btn_active:after{
+			content:'马上投资';
+		}
+		.invest_btn_inactive:after{
+			content: '已结束';
+		}
+		.loading_page{width: 100%;height: 100%;position: fixed;z-index: 99;background: #cccccc;top: 0;bottom: 0;text-align: center;color: #ffffff;line-height: 200%;}
+	</style>
+</head>
+<body>
+	<loading :loading="loading"></loading>
+	<div id="wrapper" class="wrapper">
+		<div id="scroller">
+			<div v-if="show">
+				<div class="wmps" v-for="arr in arrs">
+					<wmp :info="arr" :redirect="redirect"></wmp>
+					<invest :active="arr.active" :investurl="arr.investurl" :redirect="redirect"></invest>
+				</div>
+			</div>
+			<div class="pullDown"></div>
+		</div>
+	</div>
+	<script src="/wechat/static/js/vue.min.js"></script>
+	<script src="/wechat/static/js/iscroll-probe.min.js"></script>
+	<template id="loading-template">
+		<div v-if="loading" class="loading_page">loading</div>
+	</template>
+	<template id="wmp-template">
+		<div v-on:click="redirect(info.detailurl)">
+			<div class="content clearfix">
+				<p class="left title">{{info.period}}</p>
+				<p class="right enddate">{{info.lasttime}}</p>
+			</div>
+			<div class="content content2 clearfix">
+				<div class="left rate info">
+					<p class="content_title">预期年化收益</p>
+					<p>
+						<b>{{info.interest}}</b>%
+					</p>
+				</div>
+				<div class="left period info">
+					<p class="content_title">合约期限</p>
+					<p>{{info.term}}</p>
+				</div>
+				<div class="left amount info">
+					<p class="content_title">募集金额</p>
+					<p>{{info.raised}}/{{info.sum}}万</p>
+				</div>
+			</div>
+		</div>
+	</template>
+	<template id="invest-btn-template">
+		<div class="invest_btn" v-on:click="redirect(investurl)" :class="{'invest_btn_active':active,'invest_btn_inactive':!active}"></div>
+	</template>
+	<script>
+		Vue.component('wmp',{
+			template:'#wmp-template',
+			props:['info','redirect']
+		});
+		Vue.component('invest',{
+			template:'#invest-btn-template',
+			props:['active','investurl','redirect']
+		});
+		Vue.component('loading',{
+			template:'#loading-template',
+			props:['loading']
+		})
+	</script>
+	<script>
+		var arrs = [
+			{period:'1023期',lasttime:3200,interest:12,term:365,raised:12,sum:500,active:true,detailurl:'http://localhost',investurl:'http://localhost:8080/wechat/html/index.html'},
+			{period:'1023期',lasttime:3200,interest:12,term:365,raised:12,sum:500,active:false},
+			{period:'1023期',lasttime:3200,interest:12,term:365,raised:12,sum:500,active:true},
+			{period:'1023期',lasttime:3200,interest:12,term:365,raised:12,sum:500,active:true},
+			{period:'1023期',lasttime:3200,interest:12,term:365,raised:12,sum:500,active:true},
+			{period:'1023期',lasttime:3200,interest:12,term:365,raised:12,sum:500,active:true},
+			{period:'1023期',lasttime:3200,interest:12,term:365,raised:12,sum:500,active:true},
+			{period:'1023期',lasttime:3200,interest:12,term:365,raised:12,sum:500,active:true},
+			{period:'1023期',lasttime:3200,interest:12,term:365,raised:12,sum:500,active:true},
+			{period:'1023期',lasttime:3200,interest:12,term:365,raised:12,sum:500,active:false}
+		];
+		var vm = new Vue({
+			el:'body',
+			data:{
+				show:false,
+				loading:true,
+				arrs : arrs
+			},
+			methods:{
+				redirect : function(url){
+					console.log('test' + url);
+				}
+			}
+		});
+		var scroll = new IScroll('#wrapper',{
+			click:true,
+			probeType:2
+		}),
+		pullDownStart;
+		scroll.on('scrollStart',function(){
+			pullDownStart = this.y;
+		});
+		scroll.on('scroll',function(){
+			if(this.y < this.maxScrollY && this.pointY < 1){
+				this.scrollTo(0,this.maxScrollY,400);
+			}
+		});
+		scroll.on('scrollEnd',function(){
+				if(Math.abs(this.y - pullDownStart) <= 5 && this.directionY >= 0){
+					vm.arrs.push({period:'1023期',lasttime:3200,interest:12,term:365,raised:12,sum:500,active:false});
+					vm.arrs.push({period:'1023期',lasttime:3200,interest:12,term:365,raised:12,sum:500,active:false});
+					vm.arrs.push({period:'1023期',lasttime:3200,interest:12,term:365,raised:12,sum:500,active:false});
+					vm.arrs.push({period:'1023期',lasttime:3200,interest:12,term:365,raised:12,sum:500,active:false});
+					vm.arrs.push({period:'1023期',lasttime:3200,interest:12,term:365,raised:12,sum:500,active:false});
+					setTimeout(function(){
+						scroll.refresh();
+					},0)
+				}
+			}
+		);
+		setTimeout(function(){
+			vm.show = true;
+			vm.loading = false;
+			setTimeout(function(){
+				scroll.refresh();
+			},0);
+		},1000);
+	</script>
+</body>
+</html>
